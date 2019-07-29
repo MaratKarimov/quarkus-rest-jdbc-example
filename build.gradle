@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'io.quarkus' version '0.19.1'
+}
+
+group 'ru.maratk'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Quarkus BOM
+    implementation enforcedPlatform('io.quarkus:quarkus-bom:0.19.1')
+    // Quarkus RESTEasy
+    implementation 'io.quarkus:quarkus-resteasy'
+    // Quarkus RESTEasy JSON-B
+    implementation 'io.quarkus:quarkus-resteasy-jsonb'
+    // Quarkus JDBC H2 driver
+    implementation 'io.quarkus:quarkus-jdbc-h2'
+    // Quarkus connection pool
+    implementation 'io.quarkus:quarkus-agroal'
+    // Quarkus Narayana JTA (transactions managment)
+    implementation 'io.quarkus:quarkus-narayana-jta'
+    // Quarkus Flyway (database migrations)
+    implementation 'io.quarkus:quarkus-flyway'
+    // JUnit
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
